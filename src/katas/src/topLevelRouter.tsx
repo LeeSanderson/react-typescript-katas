@@ -5,7 +5,11 @@ import { NotFoundPage } from "./Views/NotFound/NotFoundPage";
 import { HomePage } from "./Views/Home/HomePage";
 
 export const navigationMenus: NavigationMenu[] = [
-  { menuItemName: "Home", path: "/", element: <HomePage /> },
+  {
+    menuItemName: "Home",
+    path: "/",
+    element: <HomePage />,
+  },
   {
     menuItemName: "Calculator",
     path: "/Calculator",
