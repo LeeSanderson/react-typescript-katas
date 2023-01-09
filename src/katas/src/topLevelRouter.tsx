@@ -1,12 +1,16 @@
 import { createBrowserRouter } from "react-router-dom";
-import App from "./App";
-import { Calculator } from "./Views/Calculator/Calculator";
+import { CalculatorPage } from "./Views/Calculator/CalculatorPage";
 import { NavigationMenu } from "./SharedModels/NavigationMenu";
-import { NotFound } from "./Views/NotFound/NotFound";
+import { NotFoundPage } from "./Views/NotFound/NotFoundPage";
+import { HomePage } from "./Views/Home/HomePage";
 
 export const navigationMenus: NavigationMenu[] = [
-  { menuItemName: "Home", path: "/", element: <App /> },
-  { menuItemName: "Calculator", path: "/Calculator", element: <Calculator /> },
+  { menuItemName: "Home", path: "/", element: <HomePage /> },
+  {
+    menuItemName: "Calculator",
+    path: "/Calculator",
+    element: <CalculatorPage />,
+  },
 ];
 
 export const router = createBrowserRouter(
@@ -15,7 +19,7 @@ export const router = createBrowserRouter(
     .concat([
       {
         path: "*",
-        element: <NotFound />,
+        element: <NotFoundPage />,
       },
     ])
 );
