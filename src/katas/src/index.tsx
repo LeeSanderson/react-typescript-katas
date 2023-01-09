@@ -13,6 +13,7 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <Layout>
+      <div className="font-bold bg-zinc-900">Bold</div>
       <RouterProvider router={router} />
     </Layout>
   </React.StrictMode>
