@@ -1,37 +1,20 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { Calculator } from "./Calculator";
+import { RouterProvider } from "react-router-dom";
+import { router } from "./topLevelRouter";
+import { Layout } from "./UIPalette/Layout/Layout";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <App />,
-    //loader: rootLoader,
-    /*children: [
-      {
-        path: "team",
-        element: <Team />,
-        loader: teamLoader,
-      },
-    ],*/
-  },
-  {
-    path: "/Calculator",
-    element: <Calculator />,
-  },
-]);
-
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <Layout>
+      <RouterProvider router={router} />
+    </Layout>
   </React.StrictMode>
 );
 
