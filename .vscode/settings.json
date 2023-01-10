@@ -7,5 +7,5 @@
   "editor.quickSuggestions": {
     "strings": true
   },
-  "cSpell.words": ["tailwindcss"]
+  "cSpell.words": ["headlessui", "heroicons", "tailwindcss"]
 }

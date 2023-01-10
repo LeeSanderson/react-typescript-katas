@@ -4,7 +4,6 @@ import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 import { RouterProvider } from "react-router-dom";
 import { router } from "./topLevelRouter";
-import { Layout } from "./UIPalette/Layout/Layout";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -12,10 +11,7 @@ const root = ReactDOM.createRoot(
 
 root.render(
   <React.StrictMode>
-    <Layout>
-      <div className="font-bold bg-zinc-900">Bold</div>
-      <RouterProvider router={router} />
-    </Layout>
+    <RouterProvider router={router} />
   </React.StrictMode>
 );
 
