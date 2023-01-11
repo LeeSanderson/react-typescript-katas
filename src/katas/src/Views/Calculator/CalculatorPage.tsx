@@ -1,7 +1,3 @@
-import * as React from "react";
-
-export interface ICalculatorPageProps {}
-
-export function CalculatorPage(props: ICalculatorPageProps) {
+export function CalculatorPage() {
   return <div>Hello</div>;
 }
