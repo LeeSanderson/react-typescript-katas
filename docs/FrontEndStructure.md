@@ -33,22 +33,24 @@ React applications can be difficult to navigate and understand. By providing a s
 _Example:_
 
 ```text
-	/src/
-        index.tsx
-        topLevelRouter.tsx
-        /context/
-        /core/
-            /auth/
-            /http/
-        /i18n/
-        /sharedModels/
-        /UIPalette/
-        /Views/
-            /Home/
-                /components/
-                /hooks/
-                /mockData/
-                /model/
+  /src/
+    index.tsx
+    topLevelRouter.tsx
+    /context/
+    /core/
+      /auth/
+      /http/
+
+    /i18n/
+    /sharedModels/
+    /UIPalette/
+    /Views/
+      /Home/
+        /components/
+        /hooks/
+        /mockData/
+        /model/
+
 ```
 
 ## 2. Position outer and inner tests within view directories
@@ -59,18 +61,20 @@ _Example:_
 **Key benefits:**
 
 1. Easily put integration tests in context
-   _Example:_
+
+_Example:_
 
 ```text
-	/Home/
-		index.tsx
-		integration.spec.ts
+  /Home/
+    index.tsx
+    integration.spec.ts
 
-		/components/
-			/Layout/
-				Layout.tsx
-				Layout.spec.ts
-				Layout.styles.css
+    /components/
+      /Layout/
+        Layout.tsx
+        Layout.spec.ts
+        Layout.styles.css
+
 ```
 
 **Rejected ideas:**
@@ -96,13 +100,14 @@ _Example:_
 _Example:_
 
 ```text
-	/Home/
-		index.tsx
+  /Home/
+    index.tsx
 
-        /components/
-        /hooks/
-        /mockData/
-        /model/
+    /components/
+    /hooks/
+    /mockData/
+    /model/
+
 ```
 
 ## 4. Prefer shorter names
@@ -115,11 +120,12 @@ _Example:_
 _Example:_
 
 ```text
-    /src/views/Home/components/HomeLayout/HomeLayout.tsx
+  /src/views/Home/components/HomeLayout/HomeLayout.tsx
 
     vs
 
-    /src/views/Home/components/Layout/Layout.tsx
+  /src/views/Home/components/Layout/Layout.tsx
+
 ```
 
 **Rejected ideas:**
@@ -129,16 +135,17 @@ _Example:_
 _Example (rejected):_
 
 ```text
-	/Home/
-		index.tsx
+  /Home/
+    index.tsx
 
-        /components/
-            HomeLayout.tsx
-            HomeLayout.spec.tsx
-            HomeLayout.styles.css
-            HomeNavBar.tsx
-            HomeNavBar.spec.tsx
-            HomeNavBar.styles.tsx
+    /components/
+      HomeLayout.tsx
+      HomeLayout.spec.tsx
+      HomeLayout.styles.css
+      HomeNavBar.tsx
+      HomeNavBar.spec.tsx
+      HomeNavBar.styles.tsx
+
 ```
 
 **Rejected because:**
@@ -157,20 +164,22 @@ _Example (rejected):_
 _Example:_
 
 ```text
-	/src/
-        /i18n/
-            context.tsx
-            i18n.ts
-            keyMap.ts
-            types.ts
+  /src/
+    /i18n/
+      context.tsx
+      i18n.ts
+      keyMap.ts
+      types.ts
 
-            /de/
-                /Users/
-                /Search/
-                ...
-            /en/
-            /es/
-            /fr/
+      /de/
+        /Users/
+        /Search/
+        ...
+
+      /en/
+      /es/
+      /fr/
+
 ```
 
 ## 6. Put utility code in the right place
@@ -233,6 +242,7 @@ const EmailInput = ({ text }) => {
     <HTMLTextField onChange={({ target }) => validateEmail(target.value)} />
   );
 };
+
 ```
 
 ## 8. General guidelines
@@ -250,63 +260,70 @@ This vision doesn't claim to be perfect but is intended as a starting point and 
 _Example:_
 
 ```text
-	/src/
-        index.tsx <-- App entry point
-        topLevelRouter.tsx
-        /context/
-            GlobalStateContext.tsx
-        /core/
-            /auth/
-                cookies.ts
-                index.ts
-                refreshLogins.ts
-                ...
-            /http/
-                fetcher.tsx
-                index.ts
-                request.ts
-                types.ts
-        /i18n/
-            context.tsx
-            i18n.ts
-            keyMap.ts
-            types.ts
+  /src/
+    index.tsx <-- App entry point
+    topLevelRouter.tsx
 
-            /de/
-                /Users/
-                /Search/
-                ...
-            /en/
-            /es/
-            /fr/
+    /context/
+      GlobalStateContext.tsx
 
-        /sharedModels/
-            User.d.ts
+    /core/
+      /auth/
+        cookies.ts
+        index.ts
+        refreshLogins.ts
+        ...
 
-        /UIPalette/
-            /components/
-                /EmailInput/
-                    EmailInput.tsx
-                    EmailInput.spec.tsx
-                    EmailInput.styles.css
-            /hooks/
-                useEmailValidator.ts
+      /http/
+        fetcher.tsx
+        index.ts
+        request.ts
+        types.ts
 
-        /Views/
-            /Home/
-                index.tsx
-                integration.spec.ts
+    /i18n/
+      context.tsx
+      i18n.ts
+      keyMap.ts
+      types.ts
 
-                /components/
-                    /Layout/
-                        Layout.tsx
-                        Layout.spec.ts
-                        Layout.styles.css
+      /de/
+          /Users/
+          /Search/
+          ...
 
-                /hooks/
-                /mockData/
-                /model/
+      /en/
+      /es/
+      /fr/
 
-            /Search/
-            /Profile/
+    /sharedModels/
+        User.d.ts
+
+    /UIPalette/
+      /components/
+        /EmailInput/
+          EmailInput.tsx
+          EmailInput.spec.tsx
+          EmailInput.styles.css
+
+      /hooks/
+        useEmailValidator.ts
+
+    /Views/
+      /Home/
+        index.tsx
+        integration.spec.ts
+
+        /components/
+          /Layout/
+            Layout.tsx
+            Layout.spec.ts
+            Layout.styles.css
+
+        /hooks/
+        /mockData/
+        /model/
+
+      /Search/
+      /Profile/
+
 ```
