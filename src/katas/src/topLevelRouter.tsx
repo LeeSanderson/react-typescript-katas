@@ -1,8 +1,8 @@
 import { createBrowserRouter } from "react-router-dom";
-import { CalculatorPage } from "./Views/Calculator/CalculatorPage";
+import { CalculatorPage } from "./Views/Calculator";
 import { NavigationMenu } from "./SharedModels/NavigationMenu";
-import { NotFoundPage } from "./Views/NotFound/NotFoundPage";
-import { HomePage } from "./Views/Home/HomePage";
+import { NotFoundPage } from "./Views/NotFound";
+import { HomePage } from "./Views/Home";
 import { Layout } from "./UIPalette/Layout/Layout";
 
 export const navigationMenus: NavigationMenu[] = [

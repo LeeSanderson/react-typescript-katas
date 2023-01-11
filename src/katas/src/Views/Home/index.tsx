@@ -1,5 +1,5 @@
 import logo from "./logo.svg";
-import "./HomePage.styles.css";
+import "./index.styles.css";
 
 export function HomePage() {
   return (
