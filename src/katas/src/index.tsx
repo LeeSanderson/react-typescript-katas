@@ -4,6 +4,7 @@ import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 import { RouterProvider } from "react-router-dom";
 import { router } from "./topLevelRouter";
+import "./i18n"; // Bootstrap internationalisation
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement

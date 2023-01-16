@@ -153,33 +153,60 @@ _Example (rejected):_
 1. Prefer less repetition
 1. Prefer easier to scan file tree
 
-## 5. `i18n` directory organised by domain concepts
+## 5. Define `i18n` strategy using `i18next` and `react-i18next`
 
-- Keep the `i18n` code in a top level directory based on domain entity
+- Keep the `i18n` code in a top level directory
+- [Create a declaration file](https://www.i18next.com/overview/typescript#create-a-declaration-file) to prevent use of undefined translation keys (IDE will
+  highlight missing keys and enable autocomplete)
+- Consider using [namespaces](https://www.i18next.com/principles/namespaces) to split translations across multiple files based on domain concepts
+  - Multiple translation files reduce likelihood of merge conflicts/collisions when changes are being made to the codebase by multiple pairs simultaneously
+  - Multiple translation files may be unnecessary complexity for smaller project
+  - Easier to start with a single file and split when necessary
 
 **Key benefits:**
 
 1. Easy to reference existing patterns for `locale`
 
-_Example:_
+_Example (simple, single translation file):_
 
 ```text
   /src/
     /i18n/
-      context.tsx
-      i18n.ts
-      keyMap.ts
-      types.ts
+      i18next.d.ts <-- declaration file
+      index.ts
 
-      /de/
-        /Users/
-        /Search/
+      /locales/
+        /en/
+          translations.json
+        /es/
+          translations.json
+        /fr/
+          translations.json
         ...
+```
 
-      /en/
-      /es/
-      /fr/
+_Example (multiple domain translation file):_
 
+```text
+  /src/
+    /i18n/
+      i18next.d.ts <-- declaration file
+      index.ts
+
+      /locales/
+        /en/
+          common.json
+          users.json
+          search.json
+        /es/
+          common.json
+          users.json
+          search.json
+        /fr/
+          common.json
+          users.json
+          search.json
+        ...
 ```
 
 ## 6. Put utility code in the right place
@@ -242,7 +269,6 @@ const EmailInput = ({ text }) => {
     <HTMLTextField onChange={({ target }) => validateEmail(target.value)} />
   );
 };
-
 ```
 
 ## 8. General guidelines

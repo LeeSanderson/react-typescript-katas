@@ -9,3 +9,4 @@
 1. Configure Tailwind: `npx tailwindcss init` (creates a basic tailwind.config.js file in the project root directory).
 1. Update the `tailwind.config.js` file and replace the `content` section with `content: ["./src/**/*.{js,jsx,ts,tsx}"]`
 1. Update the `index.css` file and add `tailwind` CSS imports e.g. `@tailwind base;`, `@tailwind components;`, and `@tailwind utilities;`.
+1. Install internationalisation support: `npm install react-i18next i18next`
